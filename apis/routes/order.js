@@ -7,11 +7,17 @@ router.get('/',(req,res,next)=>{
     })
 })
 router.post('/',(req,res,next)=>{
+    orders={
+        name:req.body.name,
+        quantity:req.body.quantity
+    }
     res.status(200).json({
+        orders:orders,
         message:"order was created"
     })
 })
 router.post('/:orderID',(req,res,next)=>{
+    
     res.status(200).json({
         message:"order details",
         orderID: req.params.orderID
